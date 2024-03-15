@@ -1,13 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => console.error('Error fetching categories data:', error));
-});
-
-
 function searchByLetter(letter) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
         .then(response => response.json())
@@ -24,7 +14,7 @@ function searchByLetter(letter) {
         .catch(error => console.error('Error fetching data:', error));
 }
 
-function displayCards(meals, localMeals) {
+function displayCards(meals) {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
 
