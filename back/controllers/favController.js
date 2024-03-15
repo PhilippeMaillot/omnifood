@@ -1,17 +1,6 @@
 const model = require("../models/favModel");
 
 class FavController {
-
-  static getAll = async (req, res) => {
-    try {
-      model.getAll(result);
-      res.status(200).json(result);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: "Internal Server Error" });
-    }
-  };
-
   static add = async (req, res) => {
     try {
       const { name } =
