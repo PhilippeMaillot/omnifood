@@ -45,19 +45,8 @@ function displayCards(meals, localMeals) {
             image.alt = meal.strMeal;
 
             const favButton = document.createElement('button');
-            favButton.textContent = 'Add to Favorites';
+            favButton.textContent = 'Ajouter aux favoris 🥴';
             favButton.classList.add('fav-button');
-
-            if (localMeals.some(localMeal => localMeal.name === meal.strMeal)) {
-                favButton.textContent = 'Remove from Favorites';
-                favButton.addEventListener('click', () => {
-                    removeFromFavorites(meal);
-                });
-            } else {
-                favButton.addEventListener('click', () => {
-                    addToFavorites(meal);
-                });
-            }
 
             card.appendChild(name);
             card.appendChild(image);
@@ -80,7 +69,7 @@ function addToFavorites(meal) {
         .then(data => {
             console.log(data);
             const popup = document.getElementById('popup');
-            popup.textContent = 'Recette ajoutée aux favoris';
+            popup.textContent = 'Recette ajoutée aux favoris 🤨';
             popup.classList.add('success');
             popup.style.display = 'block';
             setTimeout(() => {
@@ -115,7 +104,7 @@ function displayCards(meals) {
         image.alt = meal.strMeal;
 
         const favButton = document.createElement('button');
-        favButton.textContent = 'Add to Favorites';
+        favButton.textContent = 'Ajouter aux favoris';
         favButton.classList.add('fav-button');
         favButton.addEventListener('click', () => {
             addToFavorites(meal);
